@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "missionId": "heist_bad",
+  "templateId": "DESK_VAULT",
+  "difficulty": 1,
+  "durationSeconds": 180,
+  "objectives": [
+    { "id": "obj_1", "type": "SPAWN_LASER_CANNON", "anchorId": "surface-01" }
+  ],
+  "npcBeatIds": [],
+  "successCondition": "ALL_OBJECTIVES_COMPLETE"
+}

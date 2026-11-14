@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "missionId": "heist_oob",
+  "templateId": "SERVER_HEIST",
+  "difficulty": 2,
+  "durationSeconds": 200,
+  "objectives": [
+    { "id": "obj_1", "type": "FIND_CLUE", "anchorId": "surface-far" },
+    { "id": "obj_2", "type": "ENTER_CODE", "anchorId": "surface-by-door", "targetId": "obj_1", "steps": 4 }
+  ],
+  "npcBeatIds": ["guard_intro"],
+  "successCondition": "ALL_OBJECTIVES_COMPLETE"
+}

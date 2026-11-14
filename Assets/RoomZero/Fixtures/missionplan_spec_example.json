@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "missionId": "heist_001",
+  "templateId": "DESK_VAULT",
+  "difficulty": 1,
+  "durationSeconds": 180,
+  "objectives": [
+    { "id": "obj_1", "type": "FIND_CLUE", "anchorId": "surface-01" },
+    { "id": "obj_2", "type": "ENTER_CODE", "targetId": "vault-panel" }
+  ],
+  "npcBeatIds": ["guard_intro", "guard_react"],
+  "successCondition": "ALL_OBJECTIVES_COMPLETE"
+}

@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "profileId": "local-player",
+  "stats": { "missions": 2, "completions": 1, "completionRate": 0.5, "medianSeconds": 145, "hintRate": 0.3, "recentDifficulty": 1 },
+  "preferences": { "puzzleStyle": "observation" },
+  "lastSession": { "sessionId": "s1101120000", "missionId": "heist_001", "templateId": "DESK_VAULT", "choice": "LOUD_ROUTE", "outcome": "SUCCESS", "completed": true, "retries": 1, "hintsUsed": 0, "seconds": 145, "difficulty": 1, "adaptations": [], "summary": "LOUD run, success", "timestampUtc": "2026-11-01T12:00:00Z" },
+  "history": []
+}

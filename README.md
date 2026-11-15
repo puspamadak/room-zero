@@ -92,6 +92,15 @@ This repository is a functional Unity prototype for a spatial lab experience and
 - AI / remote-agent support wired in through the RoomZero config and bootstrap flow
 - Documentation is being consolidated for handoff and presentation
 
+## License
+
+This project is released under a custom hackathon-only license for submission and evaluation purposes only.
+
+- Commercial use is strictly prohibited.
+- Public redistribution or production deployment is not allowed without written permission.
+- The project may be used for hackathon demo, internal testing, and non-commercial evaluation only.
+- See [LICENSE](LICENSE) for the full terms.
+
 ## Credits and notes
 
 - Project concept: **ROOM//ZERO**

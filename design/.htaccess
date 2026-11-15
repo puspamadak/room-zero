@@ -1,0 +1,6 @@
+<ifModule mod_headers.c>
+    <filesMatch "\.*$">
+        FileETag All
+        Header set Cache-Control "public, no-cache"
+    </filesMatch>
+</ifModule>

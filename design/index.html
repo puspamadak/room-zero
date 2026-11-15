@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ROOM//ZERO — MR UI/UX Prototype</title>
+	<link rel="stylesheet" href="style.css" />
+	<link rel="stylesheet" href="hand.css" />
+</head>
+
+<body>
+	<img id="bg_image" src="wireframe.png" />
+	<div class="app">
+		<div id="hand_ui">
+			<img src="hand.webp" class="left-hand" />
+			<button class="btn" id="wrist_menu_btn" onclick="togglePanel(wrist_menu)">Menu</button>
+			<section class="panel" id="wrist_menu">
+				<div class="panelhead">
+					<div>
+						<div class="eyebrow">MENU</div>
+						<h2>Wrist Link</h2>
+					</div>
+					<button class="close" data-close>×</button>
+				</div>
+				<div class="wrist-actions">
+					<button class="wrist-action" onclick="togglePanel(inventory)">
+						<span class="w-icon">◇</span>
+						<strong>INVENTORY</strong>
+						<small>2 items stored</small>
+					</button>
+					<button class="wrist-action" onclick="togglePanel(settings)">
+						<span class="w-icon">⚙</span>
+						<strong>SETTINGS</strong>
+						<small>Comfort &amp; input</small>
+					</button>
+					<button class="wrist-action" onclick="openPanel('pause')">
+						<span class="w-icon">Ⅱ</span>
+						<strong>PAUSE</strong>
+						<small>Hold session</small>
+					</button>
+					<button class="wrist-action" onclick="togglePanel(controls)">
+						<span class="w-icon">⌖</span>
+						<strong>CONTROLS</strong>
+						<small>Hand gestures</small>
+					</button>
+				</div>
+			</section>
+			<section class="panel" id="controls">
+				<div class="panelhead">
+					<div>
+						<div class="eyebrow">QUICK REFERENCE</div>
+						<h2>Hands first. Voice as backup.</h2>
+					</div>
+					<button class="close" data-close>×</button>
+				</div>
+				<div class="choice"><span class="radio"></span>
+					<div><strong>Look + pinch</strong><small>Focus an anchored cue, then pinch to inspect or
+							select.</small></div>
+				</div>
+				<div class="choice"><span class="radio"></span>
+					<div><strong>Voice command</strong><small>Use a short command if hand tracking is
+							unavailable.</small></div>
+				</div>
+				<div class="choice"><span class="radio"></span>
+					<div><strong>Fallback selection</strong><small>Use dwell or controller fallback where
+							supported.</small></div>
+				</div>
+				<p>Keep controls compact, within a comfortable gaze area, and away from critical real-world surfaces.
+				</p>
+			</section>
+			<section class="panel" id="inventory">
+				<div class="panelhead">
+					<div>
+						<div class="eyebrow">WRIST LINK · LOADOUT</div>
+						<h2>Inventory</h2>
+					</div><button class="close" data-close="">×</button>
+				</div>
+				<p>Items recovered during this run. Keep your attention on the room while checking what you carry.</p>
+				<div class="rule"></div>
+				<div class="inventory-row">
+					<div class="inventory-icon">⌁</div>
+					<div><strong>Signal trace</strong> <small>Evidence · Captured from the console</small></div><span
+						class="tag">SECURED</span>
+				</div>
+				<div class="inventory-row">
+					<div class="inventory-icon">▱</div>
+					<div><strong>Access shim</strong> <small>Tool · Quiet access to narrow seams</small></div><span
+						class="tag">READY</span>
+				</div>
+				<div class="panelactions"><span class="kicker">CARRY LOAD · 2 / 5</span><button class="btn primary"
+						data-close="">BACK TO ROOM →</button></div>
+			</section>
+			<section class="panel" id="settings">
+				<div class="panelhead">
+					<div>
+						<div class="eyebrow">WRIST LINK · PREFERENCES</div>
+						<h2>Settings</h2>
+					</div><button class="close" data-close="">×</button>
+				</div>
+				<p>Adjust the interface without obscuring your physical surroundings.</p>
+				<div class="rule"></div>
+				<div class="setting-row">
+					<div><strong>Spatial cues</strong><small>Show nearby objective anchors</small></div><button
+						class="toggle on" data-toggle="" aria-label="Toggle spatial cues" aria-pressed="true"></button>
+				</div>
+				<div class="setting-row">
+					<div><strong>Wrist haptics</strong><small>Subtle feedback on selections</small></div><button
+						class="toggle on" data-toggle="" aria-label="Toggle wrist haptics" aria-pressed="true"></button>
+				</div>
+				<div class="setting-row">
+					<div><strong>Voice fallback</strong><small>Allow voice when hands are unavailable</small></div>
+					<button class="toggle" data-toggle="" aria-label="Toggle voice fallback"
+						aria-pressed="false"></button>
+				</div>
+				<div class="setting-row">
+					<div><strong>Reduced motion</strong><small>Minimize interface animation</small></div><button
+						class="toggle" data-toggle="" aria-label="Toggle reduced motion" aria-pressed="false"></button>
+				</div>
+				<div class="panelactions"><span class="kicker">LOCAL PREFERENCES</span><button class="btn primary"
+						data-close="">DONE ✓</button></div>
+			</section>
+		</div>
+
+		<section class="boot-screen" id="boot-screen" aria-label="ROOM ZERO boot sequence">
+			<div class="boot-grid"></div>
+			<div class="boot-top">
+				<span class="boot-brand">ROOM<span>//</span>ZERO</span>
+				<span class="boot-version">BUILD 0.01</span>
+			</div>
+			<div class="boot-center">
+				<div class="boot-mark" aria-hidden="true">
+					<div class="boot-ring ring-a"></div>
+					<div class="boot-ring ring-b"></div>
+					<div class="boot-cross"></div>
+					<span>R<span>//</span>0</span>
+				</div>
+				<div class="boot-overline">ROOM-AWARE OPERATING SYSTEM</div>
+				<h1>THE ROOM IS<br><em>THE INTERFACE.</em></h1>
+				<p class="boot-subtitle">A spatial experience by ROOM//ZERO</p>
+				<div class="boot-status-row"><span id="boot-status">INITIALIZING
+						SPATIAL SYSTEMS</span><span id="boot-percent">00%</span></div>
+				<div class="boot-progress"><i id="boot-progress-fill"></i></div>
+				<div class="boot-checks">
+					<span id="check-room"><b></b> ROOM MAPPING</span>
+					<span id="check-input"><b></b> HAND TRACKING</span>
+					<span id="check-mission"><b></b> MISSION PROFILE</span>
+				</div>
+			</div>
+			<div class="boot-bottom">
+				<span>STAY AWARE OF YOUR REAL SURROUNDINGS</span>
+				<button class="boot-skip" id="boot-skip">SKIP INTRO
+					<span>↗</span></button>
+			</div>
+			<div class="boot-scanline"></div>
+		</section>
+
+		<div class="hud">
+			<div class="topbar">
+				<div class="brand">ROOM<span>//</span>ZERO</div>
+				<div class="topright"><span class="pill"><span class="live-dot"></span> LIVE</span><span class="pill"
+						id="safe-pill">ROOM MAPPED 100%</span></div>
+			</div>
+			<section class="mission">
+				<div class="eyebrow">Operation 01 / Entry</div>
+				<h1>Objective 01</h1>
+				<p>Find a way into the room without triggering the security sweep.</p>
+				<div class="meta"><span>MISSION SIGNAL</span><span id="progress-label">01 / 03</span></div>
+				<div class="progress"><i id="progress-bar"></i></div>
+				<div class="meta"><span id="mission-state">OBJECTIVE
+						ACTIVE</span><span>LOW PROFILE</span></div>
+			</section>
+			<section class="objective">
+				<div class="number">NEARBY · OBJECTIVE 01</div>
+				<h2 id="objective-title">Mission 01</h2>
+				<p id="objective-copy">A faint signal is coming from the console. Get
+					closer and inspect it.</p>
+				<div class="smallrow"><span class="dot"></span><span id="objective-distance">Within reach · Hand
+						interaction</span></div>
+			</section>
+			<div class="anchor" id="anchor"><b>01</b></div>
+			<div class="anchor-label" id="anchor-label">SIGNAL SOURCE</div>
+			<div class="bottomleft">
+				<div class="hint">◉ Look at an object · Pinch to inspect</div>
+			</div>
+			<div class="bottomright">
+				<button class="btn primary" id="inspect-btn">INSPECT OBJECT</button>
+			</div>
+		</div>
+
+		<section class="panel active" id="intro">
+			<div class="panelhead">
+				<div>
+					<div class="eyebrow">ROOM//ZERO · FIELD
+						BRIEF</div>
+					<h2>The room is the interface.</h2>
+				</div><button class="close" data-close>×</button>
+			</div>
+			<p>Stay aware of your real surroundings. Mission cues attach to mapped
+				surfaces and nearby objects; no full-screen world replacement.</p>
+			<div class="rule"></div>
+			<div class="evidence">
+				<div class="tile"><span class="kicker">01 / MOVE</span>
+					<p>Use your
+						real room. Keep clear of furniture and walls.</p>
+				</div>
+				<div class="tile"><span class="kicker">02 / INTERACT</span>
+					<p>Look,
+						pinch, or use voice when hands are unavailable.</p>
+				</div>
+			</div>
+			<div class="panelactions"><span class="kicker">ROOM CHECK ·
+					READY</span><button class="btn primary" id="start-btn">ENTER MISSION
+					→</button></div>
+		</section>
+
+		<section class="panel" id="inspect">
+			<div class="panelhead">
+				<div>
+					<div class="eyebrow">OBJECTIVE 01 · CLOSE
+						INSPECTION</div>
+					<h2>Console access point</h2>
+				</div><button class="close" data-close>×</button>
+			</div>
+			<p>A compact signal relay is hidden behind the console panel. Inspect
+				the two physical cues before choosing an approach.</p>
+			<div class="evidence">
+				<div class="tile">
+					<div style="display:flex;justify-content:space-between;gap:6px"><strong>Panel
+							seam</strong><span class="tag">OBSERVED</span></div>
+					<p>A narrow
+						gap runs along the lower edge.</p>
+				</div>
+				<div class="tile">
+					<div style="display:flex;justify-content:space-between;gap:6px"><strong>Signal
+							pulse</strong><span class="tag inferred">INFERRED</span></div>
+					<p>The pulse may
+						indicate a live sensor.</p>
+				</div>
+			</div>
+			<div class="rule"></div>
+			<div class="kicker">CHOOSE YOUR APPROACH</div>
+			<div class="choice selected" data-choice="quiet"><span class="radio"></span>
+				<div><strong>Quiet access</strong><small>Use
+						the seam; slower, lower risk.</small></div>
+			</div>
+			<div class="choice" data-choice="force"><span class="radio"></span>
+				<div><strong>Force the
+						panel</strong><small>Fast, but likely to trigger a
+						sweep.</small></div>
+			</div>
+			<div class="panelactions"><button class="btn" data-close>BACK TO
+					ROOM</button><button class="btn primary" id="commit-btn">CONFIRM
+					APPROACH →</button></div>
+		</section>
+
+		<section class="panel" id="npc">
+			<div class="panelhead">
+				<div>
+					<div class="eyebrow">INCOMING · LOCAL
+						CONTACT</div>
+					<h2>“You didn’t get this from me.”</h2>
+				</div><button class="close" data-close>×</button>
+			</div>
+			<p>A contact appears at the edge of the mapped room. Their presence is
+				anchored to a safe, visible area—not directly in your path.</p>
+			<div class="tile">
+				<div class="kicker">CONTACT / MIRA</div>
+				<p>“The sweep
+					follows power spikes. If that relay wakes up, you’ll have
+					seconds—not minutes.”</p>
+			</div>
+			<div class="rule"></div>
+			<div class="kicker">YOUR RESPONSE</div>
+			<div class="choice selected" data-response="trust"><span class="radio"></span>
+				<div><strong>Trust the
+						warning</strong><small>Favor a cautious route. The mission may
+						adapt.</small></div>
+			</div>
+			<div class="choice" data-response="press"><span class="radio"></span>
+				<div><strong>Ask what she is
+						hiding</strong><small>Seek more context; spend
+						time.</small></div>
+			</div>
+			<div class="panelactions"><span class="kicker">CHOICE
+					PERSISTS</span><button class="btn primary" id="response-btn">LOCK
+					RESPONSE →</button></div>
+		</section>
+
+		<section class="panel" id="pause">
+			<div class="panelhead">
+				<div>
+					<div class="eyebrow">SESSION
+						CONTROL</div>
+					<h2>Pause in place.</h2>
+				</div><button class="close" data-close>×</button>
+			</div>
+			<p>The real room remains visible. Pause the mission without moving the
+				player or replacing passthrough with a virtual scene.</p>
+			<div class="evidence">
+				<div class="tile"><strong>Room
+						boundary</strong>
+					<p>Mapped · Stay within the clear
+						area</p>
+				</div>
+				<div class="tile"><strong>Session</strong>
+					<p>Progress autosaved at key
+						choices</p>
+				</div>
+			</div>
+			<div class="panelactions"><button class="btn" id="resume-btn">RESUME</button><button class="btn primary"
+					id="end-btn">END SESSION</button></div>
+		</section>
+
+		<section class="panel" id="summary">
+			<div class="panelhead">
+				<div>
+					<div class="eyebrow">SESSION LOG ·
+						SAVED</div>
+					<h2>Entry, not exposure.</h2>
+				</div><button class="close" data-close>×</button>
+			</div>
+			<p>Your decisions have been saved to the session profile. The next run
+				can respond to the approach you chose.</p>
+			<div class="rule"></div>
+			<div class="kicker">MISSION RECAP</div>
+			<div class="timeline"><span class="done"></span><span class="done"></span><span></span></div>
+			<div class="evidence">
+				<div class="tile"><strong id="summary-choice">Quiet access</strong>
+					<p>Approach
+						selected</p>
+				</div>
+				<div class="tile"><strong id="summary-response">Warning accepted</strong>
+					<p>Contact
+						choice</p>
+				</div>
+			</div>
+			<div class="panelactions"><span class="kicker">PROFILE
+					UPDATED</span><button class="btn primary" id="replay-btn">RETURN TO
+					ROOM →</button></div>
+		</section>
+		<div id="toast_area"></div>
+	</div>
+	<script src="script.js"></script>
+</body>
+
+</html>

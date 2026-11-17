@@ -11,6 +11,8 @@ How it works in one line: Meta XR and hand tracking give the player a real room 
 <!-- VIDEO_URL -->
 **▶ Demo and explanation video:** ~~Coming soon!~~
 
+![Poster](docs/hero.png)
+
 Built for the **Meta VR Hackathon 2026**. Repository and project documentation are still being finalized; use the sections below as the current project summary and onboarding guide.
 
 ## Run it in 3 steps

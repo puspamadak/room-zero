@@ -9,7 +9,7 @@ This project combines Meta XR / OpenXR integration, desktop fallback controls, a
 How it works in one line: Meta XR and hand tracking give the player a real room and a live set of interactions; ROOM//ZERO layers in a scripted mission, guided NPC behavior, and a responsive lab environment where each room becomes a playable challenge.
 
 <!-- VIDEO_URL -->
-**▶ Demo and explanation video:** ~~Coming soon!~~
+**▶ Demo and explanation video (3:01):** https://youtu.be/r5c6SgjLuko
 
 ![Poster](docs/hero.png)
 
